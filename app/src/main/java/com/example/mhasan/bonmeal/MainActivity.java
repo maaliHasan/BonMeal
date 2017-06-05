@@ -2,11 +2,15 @@ package com.example.mhasan.bonmeal;
 
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Typeface;
 
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +19,7 @@ import android.support.v7.widget.SearchView;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.TypefaceSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +27,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.R.color.black;
@@ -46,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        Typeface face= Typeface.createFromAsset(getAssets(), "fonts/abuhmeda-f2.ttf");
-        SpannableString s = new SpannableString(mActivityTitle);
-        s.setSpan(new TypefaceSpan("abuhmeda-f2.ttf"), 0, s.length(),
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        Typeface face= Typeface.createFromAsset(getAssets(), "fonts/abuhmeda-f2.ttf");
+//        SpannableString s = new SpannableString(mActivityTitle);
+//        s.setSpan(new TypefaceSpan("abuhmeda-f2.ttf"), 0, s.length(),
+//                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
 
         addDrawerItems();
         setupDrawer();
@@ -73,14 +82,16 @@ public class MainActivity extends AppCompatActivity {
                        /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Navigation!");
+              //  getSupportActionBar().setTitle("Navigation!");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getSupportActionBar().setTitle(mActivityTitle);
+                // getSupportActionBar().setTitle(mActivityTitle);
+                ActionBar actionBar=getSupportActionBar();
+
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
