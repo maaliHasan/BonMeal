@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="textColorPrimary">#F49B94</color>
+
+    <!-- color of fragments -->
+    <color name="fridge">#D4EEFD</color>
+    <color name="cook_book">#FFEBD4</color>
+    <color name="my_recipes">#E6F1D9</color>
+    <color name="kitchen_challenge">#FDEBEA</color>
 </resources>

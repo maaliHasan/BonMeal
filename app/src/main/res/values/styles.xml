@@ -31,4 +31,5 @@
         <item name="fontPath">fonts/GothamProBold.ttf</item>
         <item name="android:textSize">16sp</item>
     </style>
-     </resources>
+
+    </resources>
